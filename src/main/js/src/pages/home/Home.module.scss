@@ -1,0 +1,118 @@
+@use '../../scss/abstract';
+
+.home-wrapper {
+    max-width: min(100%, 800px);
+    margin: 0 auto;
+    height: 100vh;
+
+    @media only screen and (min-width: 800px) {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .home-container {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+
+        @media only screen and (min-width: 800px) {
+            flex-direction: row;
+            height: 100vh;
+        }
+    }
+
+    .home-content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
+        column-gap: 17px;
+
+        @media only screen and (min-width: 800px) {
+            flex-direction: row;
+        }
+    }
+
+    .home-elememt {
+        position: relative;
+        background-color: var(--white);
+        box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, .02), 0 7px 5.4px rgba(0, 0, 0, .028), 0 12.1px 10.1px rgba(0, 0, 0, .035), 0 19.8px 18.1px rgba(0, 0, 0, .042), 0 34.7px 33.8px rgba(0, 0, 0, .05), 0 81px 81px rgba(0, 0, 0, .07);
+        width: 360px;
+        height: 600px;
+        border-radius: 30px;
+        overflow: hidden;
+        padding: 0 28px;
+        margin-bottom: 20px;
+
+        .bg {
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .top {
+            margin: 12px 0;
+        }
+
+        .head {
+            display: flex;
+            align-items: center;
+            margin: 16px 0;
+        }
+
+        .subtotal {
+            font-weight: 700;
+            font-size: 2.4rem;
+            margin-left: auto;
+        }
+
+        .icon {
+            display: block;
+            width: 50px;
+        }
+
+        .label {
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+
+        .body {
+            overflow-y: auto;
+            height: calc(100% - 98px);
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            border-radius: 50%;
+            background: var(--yellow);
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: -20%;
+            left: -50%;
+            // z-index: 1;
+        }
+    }
+
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: hidden;
+
+        .product {
+            flex: 1;
+        }
+    }
+
+    .empty-cart {
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+}

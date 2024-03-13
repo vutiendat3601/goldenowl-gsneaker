@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  gsneakerdb:
+    image: postgres:16-alpine3.19
+    hostname: gsneakerdb
+    restart: always
+    volumes:
+      - ./initdb.d/:/docker-entrypoint-initdb.d/
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: gsneaker
+      POSTGRES_PASSWORD: gsneaker
+      POSTGRES_DB: gsneaker
+    networks:
+      - gsneaker
+    
+  # gsneaker-be:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     - gsneakerdb
+  #   environment:
+  #     SPRING_DATASOURCE_URL: jdbc:postgresql://gsneakerdb:5432/mydatabase
+  #     SPRING_DATASOURCE_USERNAME: gsneaker
+  #     SPRING_DATASOURCE_PASSWORD: gsneaker
+  
+networks:
+  gsneaker:
+    name: gsneaker
+    driver: bridge

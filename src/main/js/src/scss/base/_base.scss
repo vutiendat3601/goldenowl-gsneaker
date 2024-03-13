@@ -1,0 +1,44 @@
+@use '../abstract';
+
+:root {
+  --white: #FFFFFF;
+  --black: #303841;
+  --gray: #777777;
+  --yellow: #F6C90E;
+  --text-color: var(--black);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--black);
+
+  font-size: 1.6rem;
+  font-family: 'Rubik', sans-serif;
+}
+
+input,
+button {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f8d43f;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, .15);
+  }
+}

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gsneaker
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gsneaker
+    username: gsneaker
+    password: gsneaker
+  jpa:
+    show-sql: true

@@ -1,0 +1,84 @@
+@use '../../scss/abstract';
+
+.product-card {
+    padding: 40px 0;
+
+    &:first-child {
+        padding: 0;
+    }
+
+    .thumb-bg {
+        width: 304px;
+        height: 380px;
+        overflow: hidden;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+
+        .thumb {
+            filter: drop-shadow(0 30px 20px rgba(0, 0, 0, .2));
+            display: block;
+            width: 100%;
+            rotate: -24deg;
+            margin-left: -26px;
+        }
+    }
+
+    .name {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 26px 0 20px;
+        line-height: 1.5;
+    }
+
+    .description {
+        font-size: 1.3rem;
+        color: #777;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .in-cart {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--yellow);
+            padding: 12px;
+        }
+
+        .in-cart .check-icon {
+            display: block;
+            width: 100%;
+        }
+
+        .cta {
+            @include abstract.flexAlignCenter;
+            background: var(--yellow);
+            border-radius: 9999px;
+            height: 46px;
+            background-color: var(--yellow);
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 16px 20px;
+            border-radius: 100px;
+            transition: all .25s ease;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.app {
+    &::after {
+        content: "";
+        display: block;
+        position: fixed;
+        width: 300%;
+        height: 100dvh;
+        top: 50%;
+        left: 50%;
+        border-radius: 100%;
+        transform: translateX(-50%) skewY(-8deg);
+        background-color: #f6c90e;
+        z-index: -1;
+        -webkit-animation: App_wave_3CtRm 8s ease-in-out infinite alternate;
+        animation: bubble 8s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateX(-50%) skew(0deg, -8deg);
+    }
+    
+    100% {
+        transform: translateX(-30%) skew(8deg, -4deg);
+    }
+}
